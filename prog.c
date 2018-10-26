@@ -120,6 +120,8 @@ int main() {
      printf("%d\n", List.size);
    }else if(strcmp(str,"clear")==0){
      freeall(*List.head);
+     List.size = 0;
+     List.head = NULL;
      printf("empty\n");
    }else if(strcmp(str,"dump")==0){
      if(List.size == 0){
