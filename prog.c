@@ -60,7 +60,7 @@ void freeall(struct node Node){
 
 void dump(struct node Node){
   if(Node.next == NULL){
-    printf("%d ", Node.value);
+    printf("%d\n", Node.value);
   }else{
     printf("%d ", Node.value);
     dump(*Node.next);
@@ -87,16 +87,16 @@ int main() {
      printf("%d\n", pushfront(a));
    }else if(strcmp(str,"pop-front")==0){
     if(List.size==0){
-      printf("empty");
+      printf("empty\n");
     }else{
-      printf("%d", List.head->value);
+      printf("%d\n", List.head->value);
       List.head = List.head->next;
       List.size--;
     }
    }else if(strcmp(str,"push-front")==0){
      int a;
      scanf("%d", &a);
-     printf("%d", a);
+     printf("%d\n", a);
      struct node *last = NULL;
      last = malloc(sizeof(struct node));
      last->next = List.head;
@@ -105,24 +105,24 @@ int main() {
      List.size++;
    }else if(strcmp(str,"peek-front")==0){
      if(List.size==0){
-        printf("empty");
+        printf("empty\n");
      }else{
-        printf("%d", List.head->value);
+        printf("%d\n", List.head->value);
      }
    }else if(strcmp(str,"peek-back")==0){
      if(List.size == 0){
-       printf("empty");
+       printf("empty\n");
      }else{
-       printf("%d", peekback(*List.head));
+       printf("%d\n", peekback(*List.head));
      }
    }else if(strcmp(str,"size")==0){
-     printf("%d", List.size);
+     printf("%d\n", List.size);
    }else if(strcmp(str,"clear")==0){
      freeall(*List.head);
-     printf("empty");
+     printf("empty\n");
    }else if(strcmp(str,"dump")==0){
      if(List.size == 0){
-      printf("empty");
+      printf("empty\n");
      }else{
        dump(*List.head);
      }
