@@ -69,7 +69,6 @@ void dump(struct node Node){
 int main() {
   List.size = 0;
   char str[100];
-  int i = 0;
   while(scanf("%s", str) != EOF){
    if(strcmp(str,"push-back")==0){
      int a;
