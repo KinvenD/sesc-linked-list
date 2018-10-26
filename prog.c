@@ -48,12 +48,12 @@ int peekback(struct node Node){
   }
 }
 
-void freeall(struct node Node){
-  while(Node.next != NULL){
+void freeall(struct node *Node){
+  while(Node->next != NULL){
     struct node *last = NULL;
     last = malloc(sizeof(struct node));
-    last = &Node;
-    Node = *Node.next;
+    last = Node;
+    Node = Node->next;
     free(last);
   }
 }
@@ -64,14 +64,6 @@ void dump(struct node Node){
   }else{
     printf("%d ", Node.value);
     dump(*Node.next);
-  }
-}
-
-struct node* get(struct node *noode, int i){
-  if(i==0){
-    return noode;
-  }else{
-    return get(noode->next,i-1);
   }
 }
 
@@ -119,7 +111,7 @@ int main() {
    }else if(strcmp(str,"size")==0){
      printf("%d\n", List.size);
    }else if(strcmp(str,"clear")==0){
-     freeall(*List.head);
+     freeall(List.head);
      List.size = 0;
      List.head = NULL;
      printf("empty\n");
