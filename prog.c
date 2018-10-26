@@ -1,8 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-  
-  struct list List;
 
 struct node{
   int value;
@@ -13,6 +11,8 @@ struct list{
   struct node* head;
   int size;
 };
+
+struct list List;
 
 void add(struct node *noode, int value){
   if(noode->next==NULL){
@@ -76,6 +76,7 @@ struct node* get(struct node *noode, int i){
 }
 
 int main() {
+  List.size = 0;
   char str[100];
   char out[100];
   int value[100];
@@ -126,6 +127,8 @@ int main() {
      }else{
        dump(*List.head);
      }
+   }else{
+     printf("error");
    }
   }
 }
