@@ -51,7 +51,6 @@ int peekback(struct node Node){
 void freeall(struct node *Node){
   while(Node->next != NULL){
     struct node *last = NULL;
-    last = malloc(sizeof(struct node));
     last = Node;
     Node = Node->next;
     free(last);
